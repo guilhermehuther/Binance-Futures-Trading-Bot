@@ -94,7 +94,7 @@ while True:
             print(f'Short encerrado: {df.index[-1]}')
             flag_sell = False
             
-  if strategycalls == True
+  if strategycalls == True:
       if strategy(df) == "Buy" and flag_sell == True:
         print(client.futures_create_order(symbol=symbol, side='SELL', type='MARKET',quantity=quantity))
  
@@ -115,7 +115,7 @@ while True:
     print(client.futures_create_order(symbol=symbol, side='BUY', type='MARKET',quantity=quantity))
     
     if tpsl == True:
-        print(client.futures_create_order(symbol=symbol, side='SELL', type='STOP_MARKET',stopPrice = round(df["close"].iloc[-1] * (1 - (tp/100), get_precision(symbol)), closePosition = True))
+        print(client.futures_create_order(symbol=symbol, side='SELL', type='STOP_MARKET',stopPrice = round(df["close"].iloc[-1] * (1 - (tp/100)), get_precision(symbol)), closePosition = True))
         print(client.futures_create_order(symbol=symbol, side='SELL', type='TAKE_PROFIT_MARKET',stopPrice = round(df["close"].iloc[-1] * (1 + (sl/100)), get_precision(symbol)), closePosition = True))
 
     print(f'Long: {df.index[-1]}')
