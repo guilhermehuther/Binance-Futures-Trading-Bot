@@ -97,10 +97,12 @@ while True:
   if strategycalls == True:
       if strategy(df) == "Buy" and flag_sell == True:
         print(client.futures_create_order(symbol=symbol, side='SELL', type='MARKET',quantity=quantity))
- 
+        flag_sell = False
+     
       if strategy(df) == "Sell" and flag_buy == True:
         print(client.futures_create_order(symbol=symbol, side='BUY', type='MARKET',quantity=quantity))
-
+        flag_buy = False
+        
   if strategy(df) == "Sell" and (dt.datetime.now() <= df["close time"].iloc[-1] - dt.timedelta(seconds = 10)) == False and (flag_sell == False and flag_buy == False):
     print(client.futures_create_order(symbol=symbol, side='SELL', type='MARKET',quantity=quantity))
     
