@@ -1,0 +1,7 @@
+binance==0.3
+numpy==1.23.0
+pandas==1.4.3
+pandas_datareader==0.10.0
+pandas_ta==0.3.14b0
+python_binance==1.0.16
+requests==2.27.1
